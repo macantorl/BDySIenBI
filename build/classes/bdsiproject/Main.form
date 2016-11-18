@@ -4,8 +4,6 @@
   <NonVisualComponents>
     <Component class="javax.swing.ButtonGroup" name="btngVis">
     </Component>
-    <Component class="javax.swing.ButtonGroup" name="btngComp">
-    </Component>
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
@@ -85,12 +83,8 @@
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="rdHsa" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="rdKo" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="rdEc" min="-2" max="-2" attributes="0"/>
+                              <Component id="cboType" min="-2" pref="121" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="btnDoVis" pref="133" max="32767" attributes="0"/>
                           </Group>
@@ -109,10 +103,8 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="rdHsa" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="rdKo" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="rdEc" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btnDoVis" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cboType" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="57" max="32767" attributes="0"/>
                   </Group>
@@ -137,40 +129,6 @@
                 <Property name="text" type="java.lang.String" value="Por favor, seleccione el PATHWAY que desee visualizar:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="rdHsa">
-              <Properties>
-                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                  <ComponentRef name="btngVis"/>
-                </Property>
-                <Property name="selected" type="boolean" value="true"/>
-                <Property name="text" type="java.lang.String" value="HSA"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rdHsaActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JRadioButton" name="rdKo">
-              <Properties>
-                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                  <ComponentRef name="btngVis"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="KO"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rdKoActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JRadioButton" name="rdEc">
-              <Properties>
-                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                  <ComponentRef name="btngVis"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="EC"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rdEcActionPerformed"/>
-              </Events>
-            </Component>
             <Component class="javax.swing.JButton" name="btnDoVis">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Visualizar"/>
@@ -178,6 +136,19 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDoVisActionPerformed"/>
               </Events>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="cboType">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="0"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cboTypeActionPerformed"/>
+              </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
             </Component>
           </SubComponents>
         </Container>
@@ -206,14 +177,7 @@
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
-                              <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="rdHsa2" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="rdKo2" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="rdEc2" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="222" max="-2" attributes="0"/>
                               <Component id="btnDoComp" pref="133" max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -233,13 +197,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="cboItemsComp2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="rdHsa2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="rdKo2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="rdEc2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnDoComp" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="btnDoComp" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -248,7 +206,7 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="jLabel2">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Por favor, seleccione el primer PATHWAY a comparar:"/>
+                <Property name="text" type="java.lang.String" value="Por favor, seleccione el primer ORGANISMO a comparar:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JComboBox" name="cboItemsComp1">
@@ -267,52 +225,16 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel3">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Por favor, seleccione el segundo PATHWAY a comparar:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JRadioButton" name="rdEc2">
-              <Properties>
-                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                  <ComponentRef name="btngComp"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="EC"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rdEc2ActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JRadioButton" name="rdKo2">
-              <Properties>
-                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                  <ComponentRef name="btngComp"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="KO"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rdKo2ActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JRadioButton" name="rdHsa2">
-              <Properties>
-                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                  <ComponentRef name="btngComp"/>
-                </Property>
-                <Property name="selected" type="boolean" value="true"/>
-                <Property name="text" type="java.lang.String" value="HSA"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rdHsa2ActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel5">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Tipo de PATHWAY:"/>
+                <Property name="text" type="java.lang.String" value="Por favor, seleccione el segundo ORGANISMO a comparar:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="btnDoComp">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Comparar"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDoCompActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

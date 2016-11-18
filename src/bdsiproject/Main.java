@@ -11,14 +11,14 @@ import javax.swing.UIManager;
  *
  * @author usuario07
  */
-public class Test extends javax.swing.JFrame {
-
+public class Main extends javax.swing.JFrame {
+    
     PythonConnector pc;
 
     /**
      * Creates new form Test
      */
-    public Test() {
+    public Main() {
         try {
             pc = new PythonConnector();
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
@@ -40,25 +40,18 @@ public class Test extends javax.swing.JFrame {
     private void initComponents() {
 
         btngVis = new javax.swing.ButtonGroup();
-        btngComp = new javax.swing.ButtonGroup();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         cboItemsVis = new javax.swing.JComboBox();
         jLabel4 = new javax.swing.JLabel();
-        rdHsa = new javax.swing.JRadioButton();
-        rdKo = new javax.swing.JRadioButton();
-        rdEc = new javax.swing.JRadioButton();
         btnDoVis = new javax.swing.JButton();
+        cboType = new javax.swing.JComboBox<>();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         cboItemsComp1 = new javax.swing.JComboBox();
         cboItemsComp2 = new javax.swing.JComboBox();
         jLabel3 = new javax.swing.JLabel();
-        rdEc2 = new javax.swing.JRadioButton();
-        rdKo2 = new javax.swing.JRadioButton();
-        rdHsa2 = new javax.swing.JRadioButton();
-        jLabel5 = new javax.swing.JLabel();
         btnDoComp = new javax.swing.JButton();
         btnExit = new javax.swing.JButton();
 
@@ -70,35 +63,16 @@ public class Test extends javax.swing.JFrame {
 
         jLabel4.setText("Por favor, seleccione el PATHWAY que desee visualizar:");
 
-        btngVis.add(rdHsa);
-        rdHsa.setSelected(true);
-        rdHsa.setText("HSA");
-        rdHsa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rdHsaActionPerformed(evt);
-            }
-        });
-
-        btngVis.add(rdKo);
-        rdKo.setText("KO");
-        rdKo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rdKoActionPerformed(evt);
-            }
-        });
-
-        btngVis.add(rdEc);
-        rdEc.setText("EC");
-        rdEc.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rdEcActionPerformed(evt);
-            }
-        });
-
         btnDoVis.setText("Visualizar");
         btnDoVis.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDoVisActionPerformed(evt);
+            }
+        });
+
+        cboType.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboTypeActionPerformed(evt);
             }
         });
 
@@ -115,12 +89,8 @@ public class Test extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(rdHsa)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rdKo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rdEc)
+                        .addComponent(cboType, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnDoVis, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE)))
                 .addContainerGap())
@@ -135,47 +105,23 @@ public class Test extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(rdHsa)
-                    .addComponent(rdKo)
-                    .addComponent(rdEc)
-                    .addComponent(btnDoVis))
+                    .addComponent(btnDoVis)
+                    .addComponent(cboType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(57, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Visualizar", jPanel1);
 
-        jLabel2.setText("Por favor, seleccione el primer PATHWAY a comparar:");
+        jLabel2.setText("Por favor, seleccione el primer ORGANISMO a comparar:");
 
-        jLabel3.setText("Por favor, seleccione el segundo PATHWAY a comparar:");
-
-        btngComp.add(rdEc2);
-        rdEc2.setText("EC");
-        rdEc2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rdEc2ActionPerformed(evt);
-            }
-        });
-
-        btngComp.add(rdKo2);
-        rdKo2.setText("KO");
-        rdKo2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rdKo2ActionPerformed(evt);
-            }
-        });
-
-        btngComp.add(rdHsa2);
-        rdHsa2.setSelected(true);
-        rdHsa2.setText("HSA");
-        rdHsa2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rdHsa2ActionPerformed(evt);
-            }
-        });
-
-        jLabel5.setText("Tipo de PATHWAY:");
+        jLabel3.setText("Por favor, seleccione el segundo ORGANISMO a comparar:");
 
         btnDoComp.setText("Comparar");
+        btnDoComp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDoCompActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -192,14 +138,7 @@ public class Test extends javax.swing.JFrame {
                             .addComponent(jLabel3))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(rdHsa2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rdKo2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rdEc2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(222, 222, 222)
                         .addComponent(btnDoComp, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -215,12 +154,7 @@ public class Test extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(cboItemsComp2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(rdHsa2)
-                    .addComponent(rdKo2)
-                    .addComponent(rdEc2)
-                    .addComponent(btnDoComp))
+                .addComponent(btnDoComp)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -267,29 +201,13 @@ public class Test extends javax.swing.JFrame {
         pc.visualize(cboItemsVis.getSelectedItem().toString().split(":")[0]);
     }//GEN-LAST:event_btnDoVisActionPerformed
 
-    private void rdHsaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdHsaActionPerformed
-        loadData(1, "hsa");
-    }//GEN-LAST:event_rdHsaActionPerformed
+    private void btnDoCompActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDoCompActionPerformed
+        new CompResult(this, true, pc.compare(cboItemsComp1.getSelectedItem().toString(), cboItemsComp2.getSelectedItem().toString())).setVisible(true);
+    }//GEN-LAST:event_btnDoCompActionPerformed
 
-    private void rdKoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdKoActionPerformed
-        loadData(1, "ko");
-    }//GEN-LAST:event_rdKoActionPerformed
-
-    private void rdEcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdEcActionPerformed
-        loadData(1, "ec");
-    }//GEN-LAST:event_rdEcActionPerformed
-
-    private void rdHsa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdHsa2ActionPerformed
-        loadData(2, "hsa");
-    }//GEN-LAST:event_rdHsa2ActionPerformed
-
-    private void rdKo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdKo2ActionPerformed
-        loadData(2, "ko");
-    }//GEN-LAST:event_rdKo2ActionPerformed
-
-    private void rdEc2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdEc2ActionPerformed
-        loadData(2, "ec");
-    }//GEN-LAST:event_rdEc2ActionPerformed
+    private void cboTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboTypeActionPerformed
+        loadData(1, cboType.getSelectedItem().toString());
+    }//GEN-LAST:event_cboTypeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -308,20 +226,21 @@ public class Test extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Test.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Test.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Test.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Test.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Test().setVisible(true);
+                new Main().setVisible(true);
             }
         });
     }
@@ -330,48 +249,38 @@ public class Test extends javax.swing.JFrame {
     private javax.swing.JButton btnDoComp;
     private javax.swing.JButton btnDoVis;
     private javax.swing.JButton btnExit;
-    private javax.swing.ButtonGroup btngComp;
     private javax.swing.ButtonGroup btngVis;
     private javax.swing.JComboBox cboItemsComp1;
     private javax.swing.JComboBox cboItemsComp2;
     private javax.swing.JComboBox cboItemsVis;
+    private javax.swing.JComboBox<String> cboType;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JRadioButton rdEc;
-    private javax.swing.JRadioButton rdEc2;
-    private javax.swing.JRadioButton rdHsa;
-    private javax.swing.JRadioButton rdHsa2;
-    private javax.swing.JRadioButton rdKo;
-    private javax.swing.JRadioButton rdKo2;
     // End of variables declaration//GEN-END:variables
 
     private void loadData(int type, String item) {
         switch (type) {
             case 0:
-                for (Object object : pc.getItems("hsa")) {
+                for (Object object : pc.getItems("org", 1)) {
+                    cboType.addItem((String) object);
+                }
+                for (Object object : pc.getItems("hsa", 0)) {
                     cboItemsVis.addItem((String) object);
+                }
+                for (Object object : pc.getItems("org", 0)) {
                     cboItemsComp1.addItem((String) object);
                     cboItemsComp2.addItem((String) object);
                 }
                 break;
             case 1:
                 cboItemsVis.removeAllItems();
-                for (Object object : pc.getItems(item)) {
+                for (Object object : pc.getItems(item, 0)) {
                     cboItemsVis.addItem((String) object);
-                }
-                break;
-            case 2:
-                cboItemsComp1.removeAllItems();
-                cboItemsComp2.removeAllItems();
-                for (Object object : pc.getItems(item)) {
-                    cboItemsComp1.addItem((String) object);
-                    cboItemsComp2.addItem((String) object);
                 }
                 break;
         }
