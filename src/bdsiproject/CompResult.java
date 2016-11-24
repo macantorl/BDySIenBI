@@ -29,7 +29,7 @@ public class CompResult extends javax.swing.JDialog {
         super(parent, modal);
         try {
             if (result.isEmpty()) {
-                JOptionPane.showMessageDialog(parent, "No existen archivos PATHWAY en comun.", "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(parent, "No existen archivos PATHWAY en comun.", "JavaKEGG 1.0: Error", JOptionPane.ERROR_MESSAGE);
                 this.dispose();
             } else {
                 pc = new PythonConnector();
@@ -72,6 +72,7 @@ public class CompResult extends javax.swing.JDialog {
         rdOpt3 = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("JavaKEGG 1.0: Comparación");
         setModal(true);
 
         jLabel4.setText("Por favor, seleccione el PATHWAY que desee visualizar:");
